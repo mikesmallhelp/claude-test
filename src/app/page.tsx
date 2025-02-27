@@ -1,11 +1,8 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import NavigationButtons from "@/components/NavigationButtons";
 
 export default function Home() {
-  const router = useRouter();
-  
   return (
     <main className="flex flex-col items-center">
       <section className="w-full max-w-md">
