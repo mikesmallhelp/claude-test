@@ -12,7 +12,6 @@ interface NavigationButtonsProps {
 }
 
 export default function NavigationButtons({
-  backUrl,
   nextUrl,
   onSubmit,
   disableNext = false,
