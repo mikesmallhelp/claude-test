@@ -33,26 +33,22 @@ export default function NavigationButtons({
         >
           {submitLabel}
         </button>
-      ) : nextUrl ? (
-        <Link
-          href={nextUrl}
-          className={`px-4 py-2 rounded transition-colors ${
-            disableNext
-              ? 'bg-gray-300 text-gray-500 pointer-events-none'
-              : 'bg-blue-500 text-white hover:bg-blue-600'
-          }`}
-          aria-disabled={disableNext}
-          tabIndex={disableNext ? -1 : undefined}
+      ) : (
+        <button
           onClick={(e) => {
-            if (disableNext) {
-              e.preventDefault();
+            if (!disableNext && nextUrl) {
+              window.location.href = nextUrl;
             }
           }}
+          disabled={disableNext}
+          className={`px-4 py-2 rounded transition-colors ${
+            disableNext
+              ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              : 'bg-blue-500 text-white hover:bg-blue-600'
+          }`}
         >
           Seuraava
-        </Link>
-      ) : (
-        <div></div>
+        </button>
       )}
     </div>
   );
