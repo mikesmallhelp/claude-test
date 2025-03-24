@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 
 interface NavigationButtonsProps {
   backUrl?: string;
@@ -35,7 +34,7 @@ export default function NavigationButtons({
         </button>
       ) : (
         <button
-          onClick={(e) => {
+          onClick={() => {
             if (!disableNext && nextUrl) {
               window.location.href = nextUrl;
             }
