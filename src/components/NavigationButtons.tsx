@@ -20,16 +20,7 @@ export default function NavigationButtons({
 }: NavigationButtonsProps) {
   return (
     <div className="flex justify-between mt-8">
-      {backUrl ? (
-        <Link 
-          href={backUrl}
-          className="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors"
-        >
-          Takaisin
-        </Link>
-      ) : (
-        <div></div>
-      )}
+      <div></div>
       
       {onSubmit ? (
         <button
