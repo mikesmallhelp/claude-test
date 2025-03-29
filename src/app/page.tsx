@@ -24,7 +24,7 @@ export default function Home() {
           </p>
           
           <NavigationButtons
-            nextUrl="/henkilotiedot"
+            nextUrl="/personal_info"
           />
         </div>
       </section>
