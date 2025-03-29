@@ -32,8 +32,9 @@ export function validoiHenkilotiedot(henkilotiedot: Partial<Henkilotiedot>): { v
   if (!henkilotiedot.puhelinnumero) {
     virheet.puhelinnumero = 'Phone number is required';
   } else {
-    const phoneRegex = /^(\+?[0-9]{1,3})?[0-9]{6,14}$/;
-    if (!phoneRegex.test(henkilotiedot.puhelinnumero.replace(/\s/g, ''))) {
+    // Updated regex to allow formats like (555) 123-4567
+    const phoneRegex = /^(\+?[0-9]{1,3})?[\s()+-]*([0-9][\s()+-]*){6,14}$/;
+    if (!phoneRegex.test(henkilotiedot.puhelinnumero)) {
       virheet.puhelinnumero = 'Phone number is not in the correct format';
     }
   }
