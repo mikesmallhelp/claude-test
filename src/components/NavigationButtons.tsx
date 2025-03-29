@@ -14,7 +14,7 @@ export default function NavigationButtons({
   nextUrl,
   onSubmit,
   disableNext = false,
-  submitLabel = 'Tallenna'
+  submitLabel = 'Save'
 }: NavigationButtonsProps) {
   return (
     <div className="flex justify-between mt-8">
@@ -46,7 +46,7 @@ export default function NavigationButtons({
               : 'bg-blue-500 text-white hover:bg-blue-600'
           }`}
         >
-          Seuraava
+          Next
         </button>
       )}
     </div>

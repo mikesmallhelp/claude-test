@@ -74,12 +74,12 @@ export default function LuottokorttitiedotPage() {
     <main className="flex flex-col items-center">
       <section className="w-full max-w-md">
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-4">Luottokorttitiedot</h2>
+          <h2 className="text-xl font-semibold mb-4">Credit Card Information</h2>
           
           <InputField 
             id="nimikortissa"
-            label="Nimi kortissa"
-            placeholder="ETUNIMI SUKUNIMI"
+            label="Name on Card"
+            placeholder="FIRST LAST"
             value={luottokorttitiedot.nimikortissa}
             onChange={handleInputChange}
             onBlur={handleBlur}
@@ -89,7 +89,7 @@ export default function LuottokorttitiedotPage() {
           
           <InputField 
             id="kortinnumero"
-            label="Kortin numero"
+            label="Card Number"
             placeholder="1234 5678 9012 3456"
             value={luottokorttitiedot.kortinnumero}
             onChange={handleInputChange}
@@ -100,8 +100,8 @@ export default function LuottokorttitiedotPage() {
           
           <InputField 
             id="voimassaolo"
-            label="Voimassaolo"
-            placeholder="MM/VV"
+            label="Expiration Date"
+            placeholder="MM/YY"
             value={luottokorttitiedot.voimassaolo}
             onChange={handleInputChange}
             onBlur={handleBlur}
@@ -122,7 +122,7 @@ export default function LuottokorttitiedotPage() {
           
           <SelectField
             id="korttityyppi"
-            label="Korttityyppi"
+            label="Card Type"
             value={luottokorttitiedot.korttityyppi}
             onChange={handleSelectChange}
             onBlur={handleBlur}
@@ -135,7 +135,7 @@ export default function LuottokorttitiedotPage() {
             backUrl="/osoitetiedot"
             onSubmit={validi ? seuraavaSivu : undefined}
             disableNext={!validi}
-            submitLabel="Seuraava"
+            submitLabel="Next"
           />
         </div>
       </section>

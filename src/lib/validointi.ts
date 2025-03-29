@@ -4,37 +4,37 @@ export function validoiHenkilotiedot(henkilotiedot: Partial<Henkilotiedot>): { v
   const virheet: Record<string, string> = {};
   
   if (!henkilotiedot.etunimi || henkilotiedot.etunimi.trim() === '') {
-    virheet.etunimi = 'Etunimi on pakollinen';
+    virheet.etunimi = 'First name is required';
   }
   
   if (!henkilotiedot.sukunimi || henkilotiedot.sukunimi.trim() === '') {
-    virheet.sukunimi = 'Sukunimi on pakollinen';
+    virheet.sukunimi = 'Last name is required';
   }
   
   if (!henkilotiedot.syntymaaika) {
-    virheet.syntymaaika = 'Syntymäaika on pakollinen';
+    virheet.syntymaaika = 'Date of birth is required';
   } else {
     const dateRegex = /^\d{1,2}\.\d{1,2}\.\d{4}$/;
     if (!dateRegex.test(henkilotiedot.syntymaaika)) {
-      virheet.syntymaaika = 'Syntymäaika tulee olla muodossa pp.kk.vvvv';
+      virheet.syntymaaika = 'Date of birth must be in format dd.mm.yyyy';
     }
   }
   
   if (!henkilotiedot.sahkoposti) {
-    virheet.sahkoposti = 'Sähköposti on pakollinen';
+    virheet.sahkoposti = 'Email is required';
   } else {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(henkilotiedot.sahkoposti)) {
-      virheet.sahkoposti = 'Sähköposti ei ole oikeassa muodossa';
+      virheet.sahkoposti = 'Email is not in the correct format';
     }
   }
   
   if (!henkilotiedot.puhelinnumero) {
-    virheet.puhelinnumero = 'Puhelinnumero on pakollinen';
+    virheet.puhelinnumero = 'Phone number is required';
   } else {
     const phoneRegex = /^(\+?[0-9]{1,3})?[0-9]{6,14}$/;
     if (!phoneRegex.test(henkilotiedot.puhelinnumero.replace(/\s/g, ''))) {
-      virheet.puhelinnumero = 'Puhelinnumero ei ole oikeassa muodossa';
+      virheet.puhelinnumero = 'Phone number is not in the correct format';
     }
   }
   
@@ -48,25 +48,25 @@ export function validoiOsoitetiedot(osoitetiedot: Partial<Osoitetiedot>): { vali
   const virheet: Record<string, string> = {};
   
   if (!osoitetiedot.katuosoite || osoitetiedot.katuosoite.trim() === '') {
-    virheet.katuosoite = 'Katuosoite on pakollinen';
+    virheet.katuosoite = 'Street address is required';
   }
   
   if (!osoitetiedot.postinumero) {
-    virheet.postinumero = 'Postinumero on pakollinen';
+    virheet.postinumero = 'Postal code is required';
   } else {
-    // Suomen postinumero on 5 numeroa
+    // Finnish postal code is 5 digits
     const postinumeroRegex = /^\d{5}$/;
     if (!postinumeroRegex.test(osoitetiedot.postinumero)) {
-      virheet.postinumero = 'Postinumeron tulee sisältää 5 numeroa';
+      virheet.postinumero = 'Postal code must contain 5 digits';
     }
   }
   
   if (!osoitetiedot.paikkakunta || osoitetiedot.paikkakunta.trim() === '') {
-    virheet.paikkakunta = 'Paikkakunta on pakollinen';
+    virheet.paikkakunta = 'City is required';
   }
   
   if (!osoitetiedot.maa || osoitetiedot.maa.trim() === '') {
-    virheet.maa = 'Maa on pakollinen';
+    virheet.maa = 'Country is required';
   }
   
   return {
@@ -79,43 +79,43 @@ export function validoiLuottokorttitiedot(luottokorttitiedot: Partial<Luottokort
   const virheet: Record<string, string> = {};
   
   if (!luottokorttitiedot.nimikortissa || luottokorttitiedot.nimikortissa.trim() === '') {
-    virheet.nimikortissa = 'Nimi kortissa on pakollinen';
+    virheet.nimikortissa = 'Name on card is required';
   }
   
   if (!luottokorttitiedot.kortinnumero) {
-    virheet.kortinnumero = 'Kortinnumero on pakollinen';
+    virheet.kortinnumero = 'Card number is required';
   } else {
     // Poista välilyönnit ja viivat
     const numero = luottokorttitiedot.kortinnumero.replace(/[\s-]/g, '');
     // Luottokorttinumero sisältää vain numeroita ja on 13-19 merkkiä pitkä
     const korttiRegex = /^\d{13,19}$/;
     if (!korttiRegex.test(numero)) {
-      virheet.kortinnumero = 'Kortinnumero ei ole oikeassa muodossa';
+      virheet.kortinnumero = 'Card number is not in the correct format';
     }
     
     // Luhn -algoritmi tarkistus voitaisiin myös toteuttaa tässä
   }
   
   if (!luottokorttitiedot.voimassaolo) {
-    virheet.voimassaolo = 'Kortin voimassaoloaika on pakollinen';
+    virheet.voimassaolo = 'Card expiration date is required';
   } else {
     const expiryRegex = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
     if (!expiryRegex.test(luottokorttitiedot.voimassaolo)) {
-      virheet.voimassaolo = 'Voimassaoloajan tulee olla muodossa KK/VV';
+      virheet.voimassaolo = 'Expiration date must be in format MM/YY';
     }
   }
   
   if (!luottokorttitiedot.cvv) {
-    virheet.cvv = 'CVV-koodi on pakollinen';
+    virheet.cvv = 'CVV code is required';
   } else {
     const cvvRegex = /^\d{3,4}$/;
     if (!cvvRegex.test(luottokorttitiedot.cvv)) {
-      virheet.cvv = 'CVV-koodin tulee olla 3-4 numeroa';
+      virheet.cvv = 'CVV code must be 3-4 digits';
     }
   }
   
   if (!luottokorttitiedot.korttityyppi || luottokorttitiedot.korttityyppi.trim() === '') {
-    virheet.korttityyppi = 'Korttityyppi on pakollinen';
+    virheet.korttityyppi = 'Card type is required';
   }
   
   return {

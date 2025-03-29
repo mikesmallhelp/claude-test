@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lomakesovellus",
-  description: "Monivaiheinen lomakesovellus",
+  title: "Form Application",
+  description: "Multi-step form application",
 };
 
 export default function RootLayout({
@@ -24,13 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fi">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <FormProvider>
           <div className="container mx-auto max-w-2xl py-6 px-4">
-            <h1 className="text-3xl font-bold mb-6 text-center">Lomakesovellus</h1>
+            <h1 className="text-3xl font-bold mb-6 text-center">Form Application</h1>
             {children}
           </div>
         </FormProvider>

@@ -10,11 +10,11 @@ import { validoiOsoitetiedot } from '@/lib/validointi';
 import { Osoitetiedot } from '@/lib/types';
 
 const maaVaihtoehdot = [
-  { value: 'suomi', label: 'Suomi' },
-  { value: 'ruotsi', label: 'Ruotsi' },
-  { value: 'norja', label: 'Norja' },
-  { value: 'tanska', label: 'Tanska' },
-  { value: 'viro', label: 'Viro' },
+  { value: 'suomi', label: 'Finland' },
+  { value: 'ruotsi', label: 'Sweden' },
+  { value: 'norja', label: 'Norway' },
+  { value: 'tanska', label: 'Denmark' },
+  { value: 'viro', label: 'Estonia' },
 ];
 
 export default function OsoitetiedotPage() {
@@ -75,11 +75,11 @@ export default function OsoitetiedotPage() {
     <main className="flex flex-col items-center">
       <section className="w-full max-w-md">
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-4">Osoitetiedot</h2>
+          <h2 className="text-xl font-semibold mb-4">Address Information</h2>
           
           <InputField 
             id="katuosoite"
-            label="Katuosoite"
+            label="Street Address"
             value={osoitetiedot.katuosoite}
             onChange={handleInputChange}
             onBlur={handleBlur}
@@ -89,7 +89,7 @@ export default function OsoitetiedotPage() {
           
           <InputField 
             id="postinumero"
-            label="Postinumero"
+            label="Postal Code"
             value={osoitetiedot.postinumero}
             onChange={handleInputChange}
             onBlur={handleBlur}
@@ -99,7 +99,7 @@ export default function OsoitetiedotPage() {
           
           <InputField 
             id="paikkakunta"
-            label="Paikkakunta"
+            label="City"
             value={osoitetiedot.paikkakunta}
             onChange={handleInputChange}
             onBlur={handleBlur}
@@ -109,7 +109,7 @@ export default function OsoitetiedotPage() {
           
           <SelectField
             id="maa"
-            label="Maa"
+            label="Country"
             value={osoitetiedot.maa}
             onChange={handleSelectChange}
             onBlur={handleBlur}
@@ -122,7 +122,7 @@ export default function OsoitetiedotPage() {
             backUrl="/henkilotiedot"
             onSubmit={validi ? seuraavaSivu : undefined}
             disableNext={!validi}
-            submitLabel="Seuraava"
+            submitLabel="Next"
           />
         </div>
       </section>

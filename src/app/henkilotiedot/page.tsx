@@ -58,11 +58,11 @@ export default function HenkilotiedotPage() {
     <main className="flex flex-col items-center">
       <section className="w-full max-w-md">
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold mb-4">Henkilötiedot</h2>
+          <h2 className="text-xl font-semibold mb-4">Personal Information</h2>
           
           <InputField 
             id="etunimi"
-            label="Etunimi"
+            label="First Name"
             value={henkilotiedot.etunimi}
             onChange={handleInputChange}
             onBlur={handleBlur}
@@ -72,7 +72,7 @@ export default function HenkilotiedotPage() {
           
           <InputField 
             id="sukunimi"
-            label="Sukunimi"
+            label="Last Name"
             value={henkilotiedot.sukunimi}
             onChange={handleInputChange}
             onBlur={handleBlur}
@@ -82,8 +82,8 @@ export default function HenkilotiedotPage() {
           
           <InputField 
             id="syntymaaika"
-            label="Syntymäaika"
-            placeholder="PP.KK.VVVV"
+            label="Date of Birth"
+            placeholder="DD.MM.YYYY"
             value={henkilotiedot.syntymaaika}
             onChange={handleInputChange}
             onBlur={handleBlur}
@@ -93,7 +93,7 @@ export default function HenkilotiedotPage() {
           
           <InputField 
             id="sahkoposti"
-            label="Sähköposti"
+            label="Email"
             type="email"
             value={henkilotiedot.sahkoposti}
             onChange={handleInputChange}
@@ -104,7 +104,7 @@ export default function HenkilotiedotPage() {
           
           <InputField 
             id="puhelinnumero"
-            label="Puhelinnumero"
+            label="Phone Number"
             value={henkilotiedot.puhelinnumero}
             onChange={handleInputChange}
             onBlur={handleBlur}
@@ -116,7 +116,7 @@ export default function HenkilotiedotPage() {
             backUrl="/"
             onSubmit={validi ? seuraavaSivu : undefined}
             disableNext={!validi}
-            submitLabel="Seuraava"
+            submitLabel="Next"
           />
         </div>
       </section>

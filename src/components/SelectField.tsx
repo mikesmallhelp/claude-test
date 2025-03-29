@@ -42,7 +42,7 @@ export default function SelectField({
           error ? 'border-red-500' : 'border-gray-300'
         }`}
       >
-        <option value="">Valitse...</option>
+        <option value="">Select...</option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
