@@ -26,6 +26,7 @@ const defaultOsoitetiedot: Osoitetiedot = {
 };
 
 const defaultLuottokorttitiedot: Luottokorttitiedot = {
+  nimikortissa: '',
   kortinnumero: '',
   voimassaolo: '',
   cvv: '',
