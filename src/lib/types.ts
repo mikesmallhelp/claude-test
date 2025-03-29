@@ -14,6 +14,7 @@ export interface Osoitetiedot {
 }
 
 export interface Luottokorttitiedot {
+  nimikortissa: string;
   kortinnumero: string;
   voimassaolo: string;
   cvv: string;

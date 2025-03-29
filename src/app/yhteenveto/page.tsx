@@ -64,6 +64,7 @@ export default function YhteenvetoPage() {
           <div className="mb-8">
             <h3 className="text-lg font-medium mb-2">Maksutiedot</h3>
             <div className="bg-gray-50 p-4 rounded-md">
+              <p><span className="font-medium">Nimi kortissa:</span> {lomakedata.luottokorttitiedot.nimikortissa}</p>
               <p><span className="font-medium">Korttityyppi:</span> {korttityyppiMap[lomakedata.luottokorttitiedot.korttityyppi] || lomakedata.luottokorttitiedot.korttityyppi}</p>
               <p><span className="font-medium">Kortin numero:</span> {maskattuKorttinumero}</p>
               <p><span className="font-medium">Voimassaolo:</span> {lomakedata.luottokorttitiedot.voimassaolo}</p>

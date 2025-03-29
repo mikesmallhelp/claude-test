@@ -77,6 +77,17 @@ export default function LuottokorttitiedotPage() {
           <h2 className="text-xl font-semibold mb-4">Luottokorttitiedot</h2>
           
           <InputField 
+            id="nimikortissa"
+            label="Nimi kortissa"
+            placeholder="ETUNIMI SUKUNIMI"
+            value={luottokorttitiedot.nimikortissa}
+            onChange={handleInputChange}
+            onBlur={handleBlur}
+            error={virheet.nimikortissa}
+            required
+          />
+          
+          <InputField 
             id="kortinnumero"
             label="Kortin numero"
             placeholder="1234 5678 9012 3456"

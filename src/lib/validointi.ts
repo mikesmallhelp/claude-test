@@ -78,6 +78,10 @@ export function validoiOsoitetiedot(osoitetiedot: Partial<Osoitetiedot>): { vali
 export function validoiLuottokorttitiedot(luottokorttitiedot: Partial<Luottokorttitiedot>): { validi: boolean; virheet: Record<string, string> } {
   const virheet: Record<string, string> = {};
   
+  if (!luottokorttitiedot.nimikortissa || luottokorttitiedot.nimikortissa.trim() === '') {
+    virheet.nimikortissa = 'Nimi kortissa on pakollinen';
+  }
+  
   if (!luottokorttitiedot.kortinnumero) {
     virheet.kortinnumero = 'Kortinnumero on pakollinen';
   } else {
