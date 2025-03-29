@@ -17,14 +17,7 @@ export default function YhteenvetoPage() {
     'diners': 'Diners Club'
   };
   
-  // Map country values to English names
-  const maaMap: Record<string, string> = {
-    'suomi': 'Finland',
-    'ruotsi': 'Sweden',
-    'norja': 'Norway',
-    'tanska': 'Denmark',
-    'viro': 'Estonia'
-  };
+  // Country is now a free text field
   
   // Korttinumeron viimeisten 4 numeron näyttäminen
   const maskattuKorttinumero = lomakedata.luottokorttitiedot.kortinnumero
@@ -57,7 +50,7 @@ export default function YhteenvetoPage() {
               <p><span className="font-medium">Street Address:</span> {lomakedata.osoitetiedot.katuosoite}</p>
               <p><span className="font-medium">Postal Code:</span> {lomakedata.osoitetiedot.postinumero}</p>
               <p><span className="font-medium">City:</span> {lomakedata.osoitetiedot.paikkakunta}</p>
-              <p><span className="font-medium">Country:</span> {maaMap[lomakedata.osoitetiedot.maa] || lomakedata.osoitetiedot.maa}</p>
+              <p><span className="font-medium">Country:</span> {lomakedata.osoitetiedot.maa}</p>
             </div>
           </div>
           
